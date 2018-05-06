@@ -10,7 +10,7 @@ class Birthday {
         // create a lovely place to store the firework
         this.fireworks = []
         this.counter = 0
-        this.radius = 40
+        this.radius = 30
 
     }
     resize() {
