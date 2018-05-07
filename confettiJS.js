@@ -146,7 +146,7 @@ class Birthday {
         if (this.currTxt === 23 || this.currTxt === 24) {
             this.delay = 500
             this.drawYA(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
-            if (this.currTxt === 24) this.delay = this.standarDelay
+            if (this.currTxt === 24) this.delay = this.standarDelay+1000
         }
         if (this.currTxt === 25 || this.currTxt === 26 || this.currTxt === 27) {
             this.delay = 900
