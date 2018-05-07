@@ -10,13 +10,14 @@ class Birthday {
         // create a lovely place to store the firework
         this.fireworks = []
         this.counter = 0
-        this.radius = 45
-        this.currTxt=0
-        this.lastTime=0
-        this.standarDelay=1900
-        this.delay=this.standarDelay
+        this.radius = 30
+        this.currTxt = 0
+        this.lastTime = 0
+        this.standarDelay = 2000
+        this.delay = this.standarDelay
 
     }
+
     resize() {
         this.width = canvas.width = window.innerWidth
         let center = this.width / 2 | 0
@@ -28,15 +29,14 @@ class Birthday {
         this.spawnD = this.height * .5
 
     }
+
     onClick(evt) {
         let x = evt.clientX || evt.touches && evt.touches[0].pageX
         let y = evt.clientY || evt.touches && evt.touches[0].pageY
 
-        console.log("x: "+x);
-        console.log("y: "+y);
 
-        let count = random(3,5)
-        for(let i = 0; i < count; i++) this.fireworks.push(new Firework(
+        let count = random(3, 5)
+        for (let i = 0; i < count; i++) this.fireworks.push(new Firework(
             random(this.spawnA, this.spawnB),
             this.height,
             x,
@@ -48,116 +48,290 @@ class Birthday {
 
     }
 
-    generateNextFirework(){
-        var letterCenterX = (this.width/2);
-        var letterCenterY = this.height/2;
-        var letterWidth = this.width/12;
-        var letterHeight = this.width/8;
-        if(this.currTxt===0){//С
-            this.drawC(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/4,this.height-this.height/8)
-            this.drawC(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2+this.width/3,this.height-this.height/8)
-            this.drawC(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2,this.height)
-        }
-        if(this.currTxt===1){
-            this.drawD(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/4,this.height-this.height/8)
-            this.drawD(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2+this.width/3,this.height-this.height/8)
-            this.drawD(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2,this.height)
-        }
-
-        if(this.currTxt===2){
-            this.drawN(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/4,this.height-this.height/8)
-            this.drawN(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2+this.width/3,this.height-this.height/8)
-            this.drawN(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2,this.height)
-        }
-        if(this.currTxt===3){
-            this.fireworks.push(new Firework( //П
-                this.width/4,
-                this.height-this.height/8,
-                letterCenterX - letterWidth/1.7,
-                letterCenterY - letterHeight - letterHeight/3,
-                random(300, 450),//color
-                this.radius //radius
-            ))
-            this.fireworks.push(new Firework( //П
-                this.width/2+this.width/3,
-                this.height-this.height/8,
-                letterCenterX + letterWidth/1.7,
-                letterCenterY - letterHeight- letterHeight/3,
-                random(300, 450),//color
-                this.radius //radius
-            ))
-            this.drawE(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/4,this.height-this.height/8)
-            this.drawE(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2+this.width/3,this.height-this.height/8)
-            this.drawE(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2,this.height)
-        }
-        if(this.currTxt===4 || this.currTxt===5 || this.currTxt===6){
-            this.delay=400
-            this.drawM(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-        if(this.currTxt===6) this.delay = this.standarDelay
-        }
-        if(this.currTxt===7||this.currTxt===8){
-            this.delay=400
-            this.drawR(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===8) this.delay = this.standarDelay
-        }
-        if(this.currTxt===9||this.currTxt===10||this.currTxt===11){
-            this.delay=400
-            this.drawO(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===11) this.delay = this.standarDelay
-        }
-        if(this.currTxt===12||this.currTxt===13){
-            this.delay=400
-            this.drawZH(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===13) this.delay = this.standarDelay
-        }
-        if(this.currTxt===14 || this.currTxt===15 || this.currTxt===16){
-            this.delay=400
-            this.drawD(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===16) this.delay = this.standarDelay
-        }
-        if(this.currTxt===17 || this.currTxt===18 ){
-            this.delay=400
-            this.drawE(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===18) this.delay = this.standarDelay
-        }
-        if(this.currTxt===19 || this.currTxt===20){
-            this.delay=400
-            this.drawN(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===20) this.delay = this.standarDelay
-        }
-        if(this.currTxt===21 || this.currTxt===22){
-            this.delay=400
-            this.drawI(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===22) this.delay = this.standarDelay
-        }
-        if(this.currTxt===23 || this.currTxt===24){
-            this.delay=400
-            this.drawYA(letterCenterX,letterCenterY,letterHeight,letterWidth,random(this.width/6,this.width-this.width/6), this.height-this.height/10)
-            if(this.currTxt===24) this.delay = this.standarDelay
-        }
-        if(this.currTxt==25){
-            this.drawName()
-            this.currTxt=0
-        }
-
-        this.currTxt++;
-    }
-
-
     update() {
         ctx.globalCompositeOperation = 'hard-light'
         ctx.fillStyle = 'rgba(20,20,20,0.15)'
         ctx.fillRect(0, 0, this.width, this.height)
 
         ctx.globalCompositeOperation = 'lighter'
-         for (let firework of this.fireworks) firework.update()
+        for (let firework of this.fireworks) firework.update()
 
         if(Math.abs(performance.now()-this.lastTime)>this.delay){
             this.generateNextFirework();
             this.lastTime=performance.now()
         }
         // remove the dead fireworks
-        if (this.fireworks.length > 1000) this.fireworks = this.fireworks.filter(firework => !firework.dead)
+        if (this.fireworks.length > 100) this.fireworks = this.fireworks.filter(firework => !firework.dead)
+    }
+
+    generateNextFirework() {
+        var letterCenterX = (this.width / 2);
+        var letterCenterY = this.height / 2;
+        var letterWidth = this.width / 12;
+        var letterHeight = this.width / 8;
+        if (this.currTxt === 0) {//С
+            this.drawC(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 4, this.height - this.height / 8)
+            this.drawC(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2 + this.width / 3, this.height - this.height / 8)
+            // this.drawC(letterCenterX,letterCenterY,letterHeight,letterWidth,this.width/2,this.height)
+        }
+        if (this.currTxt === 1) {
+            this.drawD(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 4, this.height - this.height / 8)
+            this.drawD(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2 + this.width / 3, this.height - this.height / 8)
+            this.drawD(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2, this.height)
+        }
+
+        if (this.currTxt === 2) {
+            this.drawN(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 4, this.height - this.height / 8)
+            this.drawN(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2 + this.width / 3, this.height - this.height / 8)
+            this.drawN(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2, this.height)
+        }
+        if (this.currTxt === 3) {
+            this.fireworks.push(new Firework( //П
+                this.width / 4,
+                this.height - this.height / 8,
+                letterCenterX - letterWidth / 1.7,
+                letterCenterY - letterHeight - letterHeight / 3,
+                random(300, 450),//color
+                this.radius //radius
+            ))
+            this.fireworks.push(new Firework( //П
+                this.width / 2 + this.width / 3,
+                this.height - this.height / 8,
+                letterCenterX + letterWidth / 1.7,
+                letterCenterY - letterHeight - letterHeight / 3,
+                random(300, 450),//color
+                this.radius //radius
+            ))
+            this.drawE(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 4, this.height - this.height / 8)
+            this.drawE(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2 + this.width / 3, this.height - this.height / 8)
+            this.drawE(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 2, this.height)
+        }
+        if (this.currTxt === 4 || this.currTxt === 5 || this.currTxt === 6) {
+            this.delay = 500
+            this.drawM(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 6) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 7 || this.currTxt === 8) {
+            this.delay = 500
+            this.drawR(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 8) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 9 || this.currTxt === 10 || this.currTxt === 11) {
+            this.delay = 500
+            this.drawO(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 11) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 12 || this.currTxt === 13) {
+            this.delay = 500
+            this.drawZH(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 13) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 14 || this.currTxt === 15 || this.currTxt === 16) {
+            this.delay =500
+            this.drawD(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 16) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 17 || this.currTxt === 18) {
+            this.delay = 500
+            this.drawE(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 18) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 19 || this.currTxt === 20) {
+            this.delay = 500
+            this.drawN(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 20) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 21 || this.currTxt === 22) {
+            this.delay = 500
+            this.drawI(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 22) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 23 || this.currTxt === 24) {
+            this.delay = 500
+            this.drawYA(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 24) this.delay = this.standarDelay
+        }
+        if (this.currTxt === 25 || this.currTxt === 26 || this.currTxt === 27) {
+            this.delay = 500
+            this.drawName()
+            if (this.currTxt === 27) this.delay = this.standarDelay
+        }
+        if(this.currTxt === 28 || this.currTxt === 29 || this.currTxt===30 ){
+            this.delay = 500
+            this.drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
+            if (this.currTxt === 27) this.delay = this.standarDelay
+        }
+
+
+        this.currTxt++;
+    }
+
+    drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth){
+        this.drawUpRightLine(letterCenterX-letterWidth, letterCenterX,letterCenterY,letterHeight,100,200)
+
+        this.fireworks.push(new Firework( //O up-left center
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX-letterWidth,
+            letterCenterY+letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //O up-left center
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX-letterWidth,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //O up-left center
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX-letterWidth-letterWidth/2,
+            letterCenterY-letterHeight+letterHeight/8,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //O up-left center
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX-letterWidth*2,
+            letterCenterY-letterHeight+letterHeight/4,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth/2,
+            letterCenterY+letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+3*letterWidth/4,
+            letterCenterY+letterHeight/1.35,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+9*letterWidth/8,
+            letterCenterY+letterHeight/2,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/4,
+            letterCenterY+(letterHeight/3.6),
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/2,
+            letterCenterY,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/1.5,
+            letterCenterY-(letterHeight/3.5),
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/1.5,
+            letterCenterY-(letterHeight/2),
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/1.2,
+            letterCenterY-(letterHeight/1.3),
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+2*letterWidth,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/2,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth+letterWidth/2,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+        this.fireworks.push(new Firework( //7
+            this.width/4,
+            this.height-this.height/10,
+            letterCenterX+letterWidth/2,
+            letterCenterY-letterHeight,
+            random(300, 450),//color
+            this.radius //radius
+        ))
+
+
     }
 
     drawName(){
