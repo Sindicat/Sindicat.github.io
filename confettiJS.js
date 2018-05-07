@@ -157,7 +157,7 @@ class Birthday {
             if (this.currTxt === 27) this.delay = this.standarDelay
         }
         if(this.currTxt === 28 || this.currTxt === 29 || this.currTxt===30 ){
-            this.delay = 500
+            this.delay = 800
             this.drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
             if (this.currTxt === 27) this.delay = this.standarDelay
         }
