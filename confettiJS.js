@@ -13,7 +13,7 @@ class Birthday {
         this.radius = 33
         this.currTxt = 0
         this.lastTime = 0
-        this.standarDelay = 4000
+        this.standarDelay = 2000
         this.delay = this.standarDelay
 
     }
@@ -154,7 +154,7 @@ class Birthday {
             if (this.currTxt === 27) this.delay = this.standarDelay+1500
         }
         if(this.currTxt > 27 && this.currTxt < 33){
-                let count = random(15, 25)
+                let count = random(10, 15)
                 for (let i = 0; i < count; i++) {
 
                     let trgX = random(0,this.width)
