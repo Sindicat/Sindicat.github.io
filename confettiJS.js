@@ -10,7 +10,7 @@ class Birthday {
         // create a lovely place to store the firework
         this.fireworks = []
         this.counter = 0
-        this.radius = 30
+        this.radius = 33
         this.currTxt = 0
         this.lastTime = 0
         this.standarDelay = 2000
@@ -43,9 +43,6 @@ class Birthday {
             y,
             random(300, 450),
             random(30, 110)))
-
-        this.counter = -30
-
     }
 
     update() {
@@ -65,29 +62,6 @@ class Birthday {
     }
 
     generateNextFirework() {
-if(this.currTxt < 25) {
-    let count = random(5, 10)
-    for (let i = 0; i < count; i++) {
-
-        let trgX
-        let trgY = random(0, this.height)
-        if (random(0, 1) === 0) {
-            trgX = random(100, this.width / 4)
-        } else {
-            trgX = random(this.width / 2 + this.width / 4, this.width)
-        }
-
-        this.fireworks.push(new Firework(
-            random(this.spawnA, this.spawnB),
-            this.height,
-            trgX,
-            trgY,
-            random(300, 450),
-            random(30, 110)))
-
-    }
-}
-
         var letterCenterX = (this.width / 2);
         var letterCenterY = this.height / 2;
         var letterWidth = this.width / 12;
@@ -177,9 +151,30 @@ if(this.currTxt < 25) {
         if (this.currTxt === 25 || this.currTxt === 26 || this.currTxt === 27) {
             this.delay = 900
             this.drawName()
-            if (this.currTxt === 27) this.delay = this.standarDelay
+            if (this.currTxt === 27) this.delay = this.standarDelay+500
         }
-        if(this.currTxt === 28 || this.currTxt === 29 || this.currTxt ===30 ){
+        if(this.currTxt > 27 && this.currTxt < 33){
+                let count = random(15, 25)
+                for (let i = 0; i < count; i++) {
+
+                    let trgX = random(0,this.width)
+                    let trgY = random(0, this.height)
+                    for(let i =0; i < random(2,4); i++){
+                        this.fireworks.push(new Firework(
+                            random(this.spawnA, this.spawnB),
+                            this.height,
+                            trgX,
+                            trgY,
+                            random(300, 450),
+                            random(30, 110)))
+                    }
+
+                }
+
+            if (this.currTxt === 32) this.delay = this.standarDelay-500
+        }
+
+        if(this.currTxt  > 33&& this.currTxt < 38){
             this.delay = 500
             this.drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
             if (this.currTxt === 30) this.delay = this.standarDelay
@@ -188,12 +183,12 @@ if(this.currTxt < 25) {
         this.currTxt++;
     }
 
-    drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth){
-        this.drawUpRightLine(letterCenterX-letterWidth, letterCenterX,letterCenterY,letterHeight,100,200)
+    drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth,spawnX,spawnY){
+        this.drawUpRightLine(letterCenterX-letterWidth, letterCenterX,letterCenterY,letterHeight,spawnX,spawnY)
 
         this.fireworks.push(new Firework( //O up-left center
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX-letterWidth,
             letterCenterY+letterHeight,
             random(300, 450),//color
@@ -201,8 +196,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //O up-left center
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX-letterWidth,
             letterCenterY-letterHeight,
             random(300, 450),//color
@@ -210,8 +205,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //O up-left center
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX-letterWidth-letterWidth/2,
             letterCenterY-letterHeight+letterHeight/8,
             random(300, 450),//color
@@ -219,8 +214,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //O up-left center
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX-letterWidth*2,
             letterCenterY-letterHeight+letterHeight/4,
             random(300, 450),//color
@@ -228,8 +223,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+letterWidth/2,
             letterCenterY+letterHeight,
             random(300, 450),//color
@@ -237,8 +232,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+3*letterWidth/4,
             letterCenterY+letterHeight/1.35,
             random(300, 450),//color
@@ -246,8 +241,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+9*letterWidth/8,
             letterCenterY+letterHeight/2,
             random(300, 450),//color
@@ -255,8 +250,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+letterWidth+letterWidth/4,
             letterCenterY+(letterHeight/3.6),
             random(300, 450),//color
@@ -264,8 +259,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+letterWidth+letterWidth/2,
             letterCenterY,
             random(300, 450),//color
@@ -273,8 +268,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+letterWidth+letterWidth/1.5,
             letterCenterY-(letterHeight/3.5),
             random(300, 450),//color
@@ -282,8 +277,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+letterWidth+letterWidth/1.5,
             letterCenterY-(letterHeight/2),
             random(300, 450),//color
@@ -291,8 +286,8 @@ if(this.currTxt < 25) {
         ))
 
         this.fireworks.push(new Firework( //7
-            this.width/4,
-            this.height-this.height/10,
+            spawnX,
+            spawnY,
             letterCenterX+letterWidth+letterWidth/1.2,
             letterCenterY-(letterHeight/1.3),
             random(300, 450),//color
