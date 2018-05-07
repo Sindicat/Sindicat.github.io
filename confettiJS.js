@@ -13,7 +13,7 @@ class Birthday {
         this.radius = 33
         this.currTxt = 0
         this.lastTime = 0
-        this.standarDelay = 3500
+        this.standarDelay = 4000
         this.delay = this.standarDelay
 
     }
@@ -151,7 +151,7 @@ class Birthday {
         if (this.currTxt === 25 || this.currTxt === 26 || this.currTxt === 27) {
             this.delay = 900
             this.drawName()
-            if (this.currTxt === 27) this.delay = this.standarDelay+500
+            if (this.currTxt === 27) this.delay = this.standarDelay+1500
         }
         if(this.currTxt > 27 && this.currTxt < 33){
                 let count = random(15, 25)
