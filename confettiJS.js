@@ -65,6 +65,29 @@ class Birthday {
     }
 
     generateNextFirework() {
+if(this.currTxt < 25) {
+    let count = random(5, 10)
+    for (let i = 0; i < count; i++) {
+
+        let trgX
+        let trgY = random(0, this.height)
+        if (random(0, 1) === 0) {
+            trgX = random(100, this.width / 4)
+        } else {
+            trgX = random(this.width / 2 + this.width / 4, this.width)
+        }
+
+        this.fireworks.push(new Firework(
+            random(this.spawnA, this.spawnB),
+            this.height,
+            trgX,
+            trgY,
+            random(300, 450),
+            random(30, 110)))
+
+    }
+}
+
         var letterCenterX = (this.width / 2);
         var letterCenterY = this.height / 2;
         var letterWidth = this.width / 12;
@@ -152,16 +175,15 @@ class Birthday {
             if (this.currTxt === 24) this.delay = this.standarDelay
         }
         if (this.currTxt === 25 || this.currTxt === 26 || this.currTxt === 27) {
-            this.delay = 500
+            this.delay = 900
             this.drawName()
             if (this.currTxt === 27) this.delay = this.standarDelay
         }
-        if(this.currTxt === 28 || this.currTxt === 29 || this.currTxt===30 ){
-            this.delay = 800
+        if(this.currTxt === 28 || this.currTxt === 29 || this.currTxt ===30 ){
+            this.delay = 500
             this.drawAge(letterCenterX, letterCenterY, letterHeight, letterWidth, random(this.width / 6, this.width - this.width / 6), this.height - this.height / 10)
-            if (this.currTxt === 27) this.delay = this.standarDelay
+            if (this.currTxt === 30) this.delay = this.standarDelay
         }
-
 
         this.currTxt++;
     }
