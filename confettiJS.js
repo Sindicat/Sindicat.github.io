@@ -9,7 +9,6 @@ class Birthday {
 
         // create a lovely place to store the firework
         this.fireworks = []
-        this.counter = 0
         this.radius = 33
         this.currTxt = 0
         this.lastTime = 0
@@ -25,8 +24,6 @@ class Birthday {
         this.spawnB = center + center / 4 | 0
 
         this.height = canvas.height = window.innerHeight
-        this.spawnC = this.height * .1
-        this.spawnD = this.height * .5
 
     }
 
@@ -41,7 +38,7 @@ class Birthday {
             this.height,
             x,
             y,
-            random(300, 450),
+            random(200, 600),
             random(30, 110)))
     }
 
@@ -88,7 +85,7 @@ class Birthday {
                 this.height - this.height / 8,
                 letterCenterX - letterWidth / 1.7,
                 letterCenterY - letterHeight - letterHeight / 3,
-                random(300, 450),//color
+                random(200, 600),//color
                 this.radius //radius
             ))
             this.fireworks.push(new Firework( //П
@@ -96,7 +93,7 @@ class Birthday {
                 this.height - this.height / 8,
                 letterCenterX + letterWidth / 1.7,
                 letterCenterY - letterHeight - letterHeight / 3,
-                random(300, 450),//color
+                random(200, 600),//color
                 this.radius //radius
             ))
             this.drawE(letterCenterX, letterCenterY, letterHeight, letterWidth, this.width / 4, this.height - this.height / 8)
@@ -154,6 +151,7 @@ class Birthday {
             if (this.currTxt === 27) this.delay = this.standarDelay+1500
         }
         if(this.currTxt > 27 && this.currTxt < 33){
+            this.delay = 1100
                 let count = random(10, 15)
                 for (let i = 0; i < count; i++) {
 
@@ -165,7 +163,7 @@ class Birthday {
                             this.height,
                             trgX,
                             trgY,
-                            random(300, 450),
+                            random(200, 600),
                             random(30, 110)))
                     }
 
@@ -191,7 +189,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -200,7 +198,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -209,7 +207,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth-letterWidth/2,
             letterCenterY-letterHeight+letterHeight/8,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -218,7 +216,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth*2,
             letterCenterY-letterHeight+letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -227,7 +225,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -236,7 +234,7 @@ class Birthday {
             spawnY,
             letterCenterX+3*letterWidth/4,
             letterCenterY+letterHeight/1.35,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -245,7 +243,7 @@ class Birthday {
             spawnY,
             letterCenterX+9*letterWidth/8,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -254,7 +252,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth+letterWidth/4,
             letterCenterY+(letterHeight/3.6),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -263,7 +261,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth+letterWidth/2,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -272,7 +270,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth+letterWidth/1.5,
             letterCenterY-(letterHeight/3.5),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -281,7 +279,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth+letterWidth/1.5,
             letterCenterY-(letterHeight/2),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -290,7 +288,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth+letterWidth/1.2,
             letterCenterY-(letterHeight/1.3),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -299,7 +297,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+2*letterWidth,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -308,7 +306,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth+letterWidth/2,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -317,7 +315,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -326,7 +324,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth+letterWidth/2,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -335,7 +333,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -344,7 +342,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/2,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -364,7 +362,7 @@ class Birthday {
             this.height - this.height / 10,
             letterCenterX - letterWidth / 1.5,
             letterCenterY - (letterHeight / 1.3),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -373,7 +371,7 @@ class Birthday {
             this.height - this.height / 10,
             letterCenterX - letterWidth / 3.5,
             letterCenterY - (letterHeight / 1.3),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -382,7 +380,7 @@ class Birthday {
             this.height - this.height / 10,
             letterCenterX + letterWidth / 4,
             letterCenterY - (letterHeight / 1.3),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -398,7 +396,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -407,7 +405,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX,
             letterCenterY-letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -416,7 +414,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX,
             letterCenterY+letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -425,7 +423,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -434,7 +432,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth,
             letterCenterY-letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -443,7 +441,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth,
             letterCenterY+letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -452,7 +450,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/2,
             letterCenterY+letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -461,7 +459,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/2,
             letterCenterY-letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -470,7 +468,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/9,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -488,7 +486,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/9,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -497,7 +495,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/1.2,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -515,7 +513,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/3,
             letterCenterY-(letterHeight/2),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -524,7 +522,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/6,
             letterCenterY - letterHeight/6,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -533,7 +531,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX,
             letterCenterY + letterHeight/6,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -542,7 +540,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX-letterWidth/4,
             letterCenterY + letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -551,7 +549,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX-letterWidth/2,
             letterCenterY + letterHeight/2 +letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -565,7 +563,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX -letterWidth,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -574,7 +572,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX -letterWidth -letterWidth/2,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -585,7 +583,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/2.5 ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -596,7 +594,7 @@ class Birthday {
             spawnY,
             letterCenterX,
             letterCenterY + letterHeight/1.1,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -605,7 +603,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth/1.5,
             letterCenterY + letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //П
@@ -613,7 +611,7 @@ class Birthday {
             spawnY,
             letterCenterX + 1.2*letterWidth,
             letterCenterY + letterHeight/3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -622,7 +620,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth,
             letterCenterY + letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -631,7 +629,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth+letterWidth/8,
             letterCenterY + letterHeight/1.5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -640,7 +638,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth/1.5,
             letterCenterY + letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -649,7 +647,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth,
             letterCenterY + letterHeight/3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -658,7 +656,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth-letterWidth/6,
             letterCenterY ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -667,7 +665,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth-letterWidth/6,
             letterCenterY - letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -676,7 +674,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth-letterWidth/8,
             letterCenterY - letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -685,7 +683,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth+letterWidth/6,
             letterCenterY - letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -694,7 +692,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth/3,
             letterCenterY - 1.2*letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -703,7 +701,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6,
             letterCenterY - 1.2*letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -712,7 +710,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6,
             letterCenterY - 1.2*letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -721,7 +719,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/1.8,
             letterCenterY - 1.2*letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -730,7 +728,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth,
             letterCenterY - letterHeight/1.4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -739,7 +737,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth,
             letterCenterY - letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -750,7 +748,7 @@ class Birthday {
             spawnY,
             letterCenterX,
             letterCenterY - letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -759,7 +757,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth/2,
             letterCenterY - letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -769,7 +767,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth/2,
             letterCenterY - letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -778,7 +776,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth,
             letterCenterY - letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -787,7 +785,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth,
             letterCenterY - letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -796,7 +794,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth,
             letterCenterY - letterHeight/8,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -805,7 +803,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth,
             letterCenterY + letterHeight/3 ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -814,7 +812,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth/2,
             letterCenterY - letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -823,7 +821,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth/2,
             letterCenterY - letterHeight/8,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -832,7 +830,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth/2,
             letterCenterY + letterHeight/3 ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -841,7 +839,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth,
             letterCenterY + letterHeight/2 ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //П
@@ -849,7 +847,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth*1.5,
             letterCenterY + letterHeight/2 ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //П
@@ -857,7 +855,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterWidth,
             letterCenterY + letterHeight ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -866,7 +864,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth*1.5,
             letterCenterY + letterHeight ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -875,7 +873,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth/4,
             letterCenterY + letterHeight/3  ,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -888,7 +886,7 @@ class Birthday {
             spawnY,
             letterCenterX + letterCenterX / 12,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -897,7 +895,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth / 12,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -906,7 +904,7 @@ class Birthday {
             spawnY,
             letterCenterX - letterWidth / 2,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))}
 
@@ -918,7 +916,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/2 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -927,7 +925,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -936,7 +934,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/8 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -945,7 +943,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -954,7 +952,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/1.8 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -964,7 +962,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/2 ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -973,7 +971,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -982,7 +980,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/8 ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -991,7 +989,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6 ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1000,7 +998,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/1.8 ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1010,7 +1008,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/2 ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1019,7 +1017,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1028,7 +1026,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/8 ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1037,7 +1035,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6 ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1046,7 +1044,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/1.8 ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1059,7 +1057,7 @@ class Birthday {
             spawnY,
             letterCenterX ,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1068,7 +1066,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/1.5 ,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1077,7 +1075,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/1.5 ,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1086,7 +1084,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2.5 ,
             letterCenterY-letterHeight/4.5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1095,7 +1093,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/3 ,
             letterCenterY-letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1107,7 +1105,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/2 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1115,7 +1113,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/8 ,
             letterCenterY-letterHeight-letterHeight/12,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1123,7 +1121,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/4 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1132,7 +1130,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY-letterHeight/1.5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1141,7 +1139,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/4 ,
             letterCenterY-letterHeight/3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1150,7 +1148,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/4 ,
             letterCenterY-letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1159,7 +1157,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/1.8 ,
             letterCenterY-letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1171,7 +1169,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth*1.3 ,
             letterCenterY-letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1179,7 +1177,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth*1.3 ,
             letterCenterY+letterHeight/10,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1187,7 +1185,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth*1.2 ,
             letterCenterY-letterHeight/1.5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1199,7 +1197,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY-letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1207,7 +1205,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth ,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1215,7 +1213,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth*1.4 ,
             letterCenterY-letterHeight/1.4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1224,7 +1222,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/2 ,
             letterCenterY-letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1232,7 +1230,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth ,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1240,7 +1238,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth*1.4 ,
             letterCenterY-letterHeight/1.4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1249,7 +1247,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY+letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1257,7 +1255,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth ,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1265,7 +1263,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth*1.4 ,
             letterCenterY+letterHeight/1.4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1274,7 +1272,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/2 ,
             letterCenterY+letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1282,7 +1280,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth ,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1290,7 +1288,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth*1.4 ,
             letterCenterY+letterHeight/1.4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1302,7 +1300,7 @@ class Birthday {
             spawnY,
             letterCenterX ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1310,7 +1308,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1318,7 +1316,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth ,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1326,7 +1324,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth*1.3 ,
             letterCenterY+letterHeight/1.5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1335,7 +1333,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth ,
             letterCenterY+letterHeight/3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1344,7 +1342,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY+letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1356,7 +1354,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1365,7 +1363,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1374,7 +1372,7 @@ class Birthday {
             spawnY,
             letterCenterX ,
             letterCenterY-letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1383,7 +1381,7 @@ class Birthday {
             spawnY,
             letterCenterX ,
             letterCenterY- letterHeight/6,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1392,7 +1390,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2 ,
             letterCenterY- letterHeight/6,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1401,7 +1399,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/4 ,
             letterCenterY- letterHeight/1.8,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1409,7 +1407,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/4 ,
             letterCenterY- letterHeight/1.2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1417,7 +1415,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/7 ,
             letterCenterY- letterHeight/3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1426,7 +1424,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/3,
             letterCenterY+letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
         this.fireworks.push(new Firework( //Н - line
@@ -1434,7 +1432,7 @@ class Birthday {
             spawnY,
             letterCenterX,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1443,7 +1441,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth,
             letterCenterY+letterHeight,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1452,7 +1450,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/4,
             letterCenterY+letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1465,7 +1463,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/3,
             letterCenterY-(letterHeight/2),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1474,7 +1472,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX+letterWidth/6,
             letterCenterY - letterHeight/6,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1483,7 +1481,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX,
             letterCenterY + letterHeight/6,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1492,7 +1490,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX-letterWidth/4,
             letterCenterY + letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1501,7 +1499,7 @@ class Birthday {
             this.height-this.height/10,
             letterCenterX-letterWidth/2,
             letterCenterY + letterHeight/2 +letterHeight/4,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1512,7 +1510,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY+letterHeight/1.35,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1521,7 +1519,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY+(letterHeight/2),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1530,7 +1528,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY+(letterHeight/3.6),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1539,7 +1537,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1548,7 +1546,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY-(letterHeight/2),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1557,7 +1555,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY-(letterHeight/1.3),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1566,7 +1564,7 @@ class Birthday {
             spawnY,
             posX,
             letterCenterY-(letterHeight/3.5),
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
@@ -1577,7 +1575,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2-letterWidth/12,
             letterCenterY-letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1586,7 +1584,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/3+letterWidth/8,
             letterCenterY+letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1595,7 +1593,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/3+letterWidth/3,
             letterCenterY+letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1604,7 +1602,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/22,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1613,7 +1611,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1622,7 +1620,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth-letterWidth/8,
             letterCenterY+letterHeight/1.3,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1631,7 +1629,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/1.3,
             letterCenterY+letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1640,7 +1638,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth-letterWidth/6,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1649,7 +1647,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2+letterWidth/5,
             letterCenterY - letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1658,7 +1656,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/7,
             letterCenterY - letterHeight/5,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1667,7 +1665,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/2+letterWidth/4,
             letterCenterY,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1676,7 +1674,7 @@ class Birthday {
             spawnY,
             letterCenterX+letterWidth/6+letterWidth/2,
             letterCenterY-letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
 
@@ -1685,7 +1683,7 @@ class Birthday {
             spawnY,
             letterCenterX-letterWidth/11,
             letterCenterY+letterHeight/2,
-            random(300, 450),//color
+            random(200, 600),//color
             this.radius //radius
         ))
     }
