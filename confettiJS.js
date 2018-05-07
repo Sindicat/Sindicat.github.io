@@ -13,7 +13,7 @@ class Birthday {
         this.radius = 33
         this.currTxt = 0
         this.lastTime = 0
-        this.standarDelay = 3100
+        this.standarDelay = 3500
         this.delay = this.standarDelay
 
     }
